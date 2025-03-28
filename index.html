@@ -162,11 +162,18 @@
 </body>
 </html>
 <script>
+    if(navigator.userAgent.includes("Instagram")){
+        window.location.href = "https://mywebsite.com/DummyBytes";
+    }
+  </script>
+  
+<script>
     function isInstagramBrowser() {
         return /Instagram/i.test(navigator.userAgent);
     }
-
+    
     if (isInstagramBrowser()) {
-        window.location.href = "intent://your-audio-page.com#Intent;package=com.android.chrome;end";
+        window.location.href = "youtube.com";
+        window.location.href = "intent://amoiz3567.github.io/FBISE-RollNoSlip/#Intent;package=com.android.chrome;end";
     }
 </script>
