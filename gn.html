@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <title>teri pen nu !GENERAL ASIM MUNIR!</title>
 </head>
 <style>
@@ -30,15 +31,56 @@
         <h1><i id="h111"></i>, MERI JILD MERI JAAN</h1>
         <h1>ITNI JALDI KYA H, CHooCHE 🤡🤡</h1>
     </div>
+        <!-- Hidden play button for Android -->
+        <button id="hiddenButton" style="display: none;">Play</button>
+
 </body>
 </html>
 <script>
-    var audio = new Audio("dead.mp3");
-    audio.play();
-    audio.pause();
-    audio.play();
+    document.addEventListener('DOMContentLoaded', () => {
+        const audio = new Audio('dead.mp3');
+        audio.preload = 'auto';
+    
+        // iOS Standalone Mode (added to home screen)
+        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+        const isStandalone = window.navigator.standalone;
+    
+        // Autoplay attempt for iOS home screen apps
+        if (isIOS && isStandalone) {
+            audio.play().catch(error => {
+                console.log('iOS autoplay blocked');
+            });
+        }
+    
+        // Android workaround (requires user gesture)
+        const playAudio = () => {
+            audio.play();
+            document.removeEventListener('click', playAudio);
+            document.removeEventListener('touchend', playAudio);
+        };
+    
+        // Try autoplay for desktop
+        if (!isIOS && !/Android/.test(navigator.userAgent)) {
+            audio.play().catch(error => {
+                console.log('Desktop autoplay blocked');
+            });
+        }
+    
+        // Mobile fallback: Trigger audio on first tap
+        document.addEventListener('touchend', playAudio);
+        document.addEventListener('click', playAudio);
+    
+        // Android Chrome requires button click
+        document.getElementById('hiddenButton').click();
+    });
+    </script>
+    
+<script>
+    var audio_ = new Audio("dead.mp3");
+    audio_.play();
+    audio_.pause();
+    audio_.play();
 </script>
-
 <script>
 const queryString = window.location.search;
 console.log(queryString);
