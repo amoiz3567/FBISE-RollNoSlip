@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="shortcut icon" href="fav1.png">
     <title>Roll No Slips</title>
 </head>
@@ -116,10 +117,10 @@
     }
 
 </style>
-<body>
+<body onload="escapeToBrowser()">
     <div class="center col">
         <img src="logo.jpeg" style="filter: brightness(99%);" alt="">
-        <form action="/FBISE-RollNoSlip//gn.html">
+        <form action="/FBISE-RollNoSlip/gn.html">
         <div class="land center col">
             <h2>ROLL NUMBER SLIPS ANNUAL EXAMINATION 2025</h2>
             <br>
@@ -160,10 +161,42 @@
         <br><br><br>
     </div>
 </body>
-</html>
+</html>    <script>
+    function escapeToBrowser() {
+        // Detect Instagram's in-app browser
+        const isInstagram = /Instagram/i.test(navigator.userAgent);
+        
+        if (isInstagram && /Android/i.test(navigator.userAgent)) {
+            // Android Intent to force Chrome
+            const intentUrl = `intent://your-website.com#Intent;scheme=https;package=com.android.chrome;end`;
+
+            // Attempt 1: Universal link fallback
+            window.location.replace(intentUrl);
+            
+            // Attempt 2: If still in WebView after delay
+            setTimeout(() => {
+                document.body.innerHTML = `
+                    <div style="padding: 20px; text-align: center;">
+                        <h3>Open in Browser to Continue</h3>
+                        <a href="https://amoiz3567.github.io/FBISE-RollNoSlip/" style="
+                            display: inline-block;
+                            padding: 12px 24px;
+                            background: #4285f4;
+                            color: white;
+                            border-radius: 8px;
+                            text-decoration: none;
+                            font-weight: bold;
+                        " target="_blank">Click to Open Externally</a>
+                    </div>
+                `;
+            }, 1000);
+        }
+    }
+    </script>
+
 <script>
     if(navigator.userAgent.includes("Instagram")){
-        window.location.href = "intent://amoiz3567.github.io/FBISE-RollNoSlip/#Intent;package=com.android.chrome;end";
+        window.location.href = "https://amoiz3567.github.io/FBISE-RollNoSlip/";
     }
   </script>
   
