@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="fav1.png">
+    <title>Roll No Slips</title>
+</head>
+<style>
+    body {
+        background-color: #f8f9fd;
+    }
+    .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .col {
+        display: flex;
+        flex-direction: column;
+    }
+    .land {
+        background-color: white;
+        padding: 25px 35px;
+        width: 450px;
+        margin-top: 35px;
+        text-align: center;
+    }
+    h2 {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-weight: 700;
+        font-size: 25px;
+        color: #2c2b27;
+    }
+    i {
+        color: #585858;
+        font-weight: 600;
+        font-style: normal;
+        text-align: center;
+        width: 45%;
+        font-size: 14px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    select {
+        width: 80%;
+        margin-left: 25px;
+        margin-right: 25px;
+        margin-top: 25px;
+        padding: 15px 15px;
+        border: 1px solid #bbbbbb;
+        font-size: 15px;
+        outline: none;
+        border-radius: 2px;
+        color: rgb(132, 132, 132);
+    }
+    select:focus {
+        outline: 2px solid #7268ff4e;
+    }
+
+    .row {
+        display: flex;
+        flex-direction: row;
+    }
+    .as {
+        gap: -10px;
+    }
+    .bs {
+        width: 80%;
+        gap: 15px;
+    }
+    input {
+        padding: 18px;
+        font-size: 15px;
+        background-color: #f3f3ff;
+        border: 1px solid #e7e7e7;
+        border-radius: 4px;
+        font-weight: 540;
+        width: 100%;
+        color: rgb(132, 132, 132);
+        outline: none;
+    }
+    input:focus {
+        outline: 2px solid #7268ff4e;
+    }
+    aw {
+        margin-top: 10px;
+    }
+    button {
+        color: white;
+        background-color: #7268ff;
+        outline: none;
+        width: 80%;
+        padding: 15px;
+        border: 0;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+</style>
+<body>
+    <div class="center col">
+        <img src="logo.jpeg" style="filter: brightness(99%);" alt="">
+        <form action="/gn.html">
+        <div class="land center col">
+            <h2>ROLL NUMBER SLIPS ANNUAL EXAMINATION 2025</h2>
+            <br>
+                <select id="type" name="type">
+                <option value="I">HSSC-I Annual 2025</option>
+                <option value="II">HSSC-II Annual 2025</option>
+                <option value="SSC-I">SSC-II Annual 2025</option>
+                <option value="SSC-II">SSC-II Annual 2025</option>
+                <option value="M-SSC-I">SSC-I (M-TECH) 2025</option>
+                <option value="M-SSC-II">SSC-II (M-TECH) 2025</option>
+                </select>
+                <aw>
+            <div class="center row as">
+                <i>Full Name</i>
+                <i>Father Name</i>
+            </div><aw></aw>
+            <div class="center row bs" style="margin: auto; margin-top: 10px;">
+                <input id="fullname" name="fullname" type="text" placeholder="Student Name">
+                <input type="text" placeholder="Father Name">
+            </div>
+            <br><br>
+            <div class="center" style="height: 0; border: 1px solid #e3e3e3; width: 100%; position: relative;">
+            <i style="font-weight: 700; color: #585858; background-color: #ffff; padding: 0 5px;">OR</i>
+        </div>
+            <br><br>
+            <div class="center row as">
+                <i style="color: #585858;">Search by Registration No.</i>
+            </div><aw></aw>
+            <div class="center row bs" style="margin: auto; margin-top: 10px;">
+                <input id="reg" name="reg" type="text" placeholder="0123456789">
+            </div>
+            <br><br><br>
+
+            <button type="submit">Search Slip</button>
+            <br><br><br>
+        </div>
+    </form>
+        <br><br><br>
+    </div>
+</body>
+</html>
