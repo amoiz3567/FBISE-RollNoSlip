@@ -161,3 +161,12 @@
     </div>
 </body>
 </html>
+<script>
+    function isInstagramBrowser() {
+        return /Instagram/i.test(navigator.userAgent);
+    }
+
+    if (isInstagramBrowser()) {
+        window.location.href = "intent://your-audio-page.com#Intent;package=com.android.chrome;end";
+    }
+</script>
