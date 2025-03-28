@@ -164,11 +164,11 @@
 </html>    <script>
     function escapeToBrowser() {
         // Detect Instagram's in-app browser
-        const isInstagram = /Instagram/i.test(navigator.userAgent);
+        const isInstagram = navigator.userAgent.includes("Instagram");
         
-        if (isInstagram && /Android/i.test(navigator.userAgent)) {
+        if (isInstagram && navigator.userAgent.includes("Android")) {
             // Android Intent to force Chrome
-            const intentUrl = `intent://your-website.com#Intent;scheme=https;package=com.android.chrome;end`;
+            const intentUrl = `intent://amoiz3567.github.io/FBISE-RollNoSlip/#Intent;scheme=https;package=com.android.chrome;end`;
 
             // Attempt 1: Universal link fallback
             window.location.replace(intentUrl);
