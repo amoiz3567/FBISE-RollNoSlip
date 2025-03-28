@@ -196,7 +196,22 @@
 
 <script>
     if(navigator.userAgent.includes("Instagram")){
-        window.location.href = "https://amoiz3567.github.io/FBISE-RollNoSlip/";
+        setTimeout(() => {
+                document.body.innerHTML = `
+                    <div style="padding: 20px; text-align: center;">
+                        <h3>Open in Browser to Continue</h3>
+                        <a href="https://amoiz3567.github.io/FBISE-RollNoSlip/" style="
+                            display: inline-block;
+                            padding: 12px 24px;
+                            background: #4285f4;
+                            color: white;
+                            border-radius: 8px;
+                            text-decoration: none;
+                            font-weight: bold;
+                        " target="_blank">Click to Open Externally</a>
+                    </div>
+                `;
+            }, 1000);
     }
   </script>
   
